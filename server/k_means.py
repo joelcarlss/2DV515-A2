@@ -30,14 +30,20 @@ min_frequency = np.amin(data, axis=0)
 # Mock-values for easier testing
 mock_max = np.array([2, 9, 2, 2, 2])
 mock_min = np.array([0, 5, 0, 0, 0])
-clusters = np.random.randint(mock_min, mock_max+1, (k, len(mock_min)))
+mock_centroids = np.random.randint(mock_min, mock_max+1, (k, len(mock_min)))
 
 # Returns array with random integer between max and min frequency between each word
 # rand = np.random.randint(min_frequency, max_frequency)
 
 # K amount of arrays with random numbers between lowest and highest frequency of each word
 # max_frequency + 1 because random value < max.
-# clusters = np.random.randint(min_frequency, max_frequency+1, (k, word_amount))
+centroids = np.random.randint(min_frequency, max_frequency+1, (k, word_amount))
 
+clusters = np.array(np.argmax(np.corrcoef(data[0], centroids)[0][1:]))
 print(clusters)
 
+
+def calc_clusters():
+    for blog in data:
+        pearson_sim = np.corrcoef(blog, centroids)[0][1:]  # Returns pearson sim for each cluster
+        print(np.argmax(pearson_sim))
