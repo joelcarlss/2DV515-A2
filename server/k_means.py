@@ -39,11 +39,13 @@ mock_centroids = np.random.randint(mock_min, mock_max+1, (k, len(mock_min)))
 # max_frequency + 1 because random value < max.
 centroids = np.random.randint(min_frequency, max_frequency+1, (k, word_amount))
 
-clusters = np.array(np.argmax(np.corrcoef(data[0], centroids)[0][1:]))
-print(clusters)
+
+# Writes put pearson for every blog against every centroids.
+# Will remove all values that are similarities between blog-data, and only similarities between clusters and blogs
+# Indexing options explained: [(from start):(to blog_amount)(last k values)]
+clusters = np.array(np.corrcoef(data, centroids)[:blog_amount,-k::])
 
 
-def calc_clusters():
-    for blog in data:
-        pearson_sim = np.corrcoef(blog, centroids)[0][1:]  # Returns pearson sim for each cluster
-        print(np.argmax(pearson_sim))
+print(np.corrcoef(data[9], centroids)[0][1:])
+print(clusters[9])
+
