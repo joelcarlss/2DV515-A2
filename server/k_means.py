@@ -46,6 +46,16 @@ centroids = np.random.randint(min_frequency, max_frequency+1, (k, word_amount))
 clusters = np.array(np.corrcoef(data, centroids)[:blog_amount,-k::])
 
 
-print(np.corrcoef(data[9], centroids)[0][1:])
-print(clusters[9])
+print(np.corrcoef(data[0], centroids)[0][1:])
+print(clusters[0])
+
+# The most similar centroid for every blog
+# or.. the index with the highest value on every element in clusters
+matching_centroids = clusters.argmax(axis=1)
+print(matching_centroids)
+print(len(matching_centroids))
+
+test_matching = np.where(matching_centroids == 1)
+print(test_matching)
+
 
