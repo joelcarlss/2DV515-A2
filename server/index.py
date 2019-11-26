@@ -1,10 +1,7 @@
-from flask import Flask, request, jsonify
-from flask_restful import Resource, Api
-from json import dumps
+from flask import Flask
+from flask_restful import Api
 from flask_cors import CORS
-from utils import *
-from routes.route import *
-from database import *
+from route import *
 
 app = Flask(__name__)
 CORS(app)

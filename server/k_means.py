@@ -47,7 +47,7 @@ while True:
         best_matching_blogs = blog_data[best_matching_indexes]  # Blogs that are most similar with centroid i
         centroids[i] = np.sum(best_matching_blogs, axis=0) / len(best_matching_indexes)  # Average blog. = new centroid
 
-    print('matching_centroids')
+    print(matching_centroids)
 
 
 
