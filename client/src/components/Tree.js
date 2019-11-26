@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   }
 })
 
-export default function Tree () {
+export default function Tree() {
   const classes = useStyles()
   const [cluster, setCluster] = useState()
 
@@ -24,7 +24,7 @@ export default function Tree () {
 
   const renderTreeChilds = () => {
     if (cluster !== undefined) {
-      return <div>
+      return (<div>
 
         {cluster.map((arr, y) => (
 
@@ -38,6 +38,7 @@ export default function Tree () {
           </TreeItem>
         ))}
       </div>
+      )
     }
   }
   return (

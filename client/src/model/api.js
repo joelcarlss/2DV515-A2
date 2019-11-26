@@ -41,21 +41,15 @@ export const getReqUser = async (id, amount, algoritm) => {
     return undefined
   }
 }
-export const getCluster = () => {
+export const getCluster = async () => {
   try {
-    let data = [
-      ['first', 'second', 'third'],
-      ['cars', 'houses', 'bridges'],
-      ['foo', 'baz', 'bar'],
-      ['this', 'that', 'then'],
-      ['yxe', 'kaxe', 'kolme']
-    ]
-    // const result = await window.fetch('http://127.0.0.1:5002/users')
-    // if (result.status === 200) {
-    //   data = await result.json()
-    // }
-    // return data.res
-    return data
+    let data
+    const result = await fetch('http://127.0.0.1:5002/clusters')
+    if (result.status === 200) {
+      data = await result.json()
+    }
+    console.log(data.res)
+    return data.res
   } catch (e) {
     console.log(e)
     return undefined
