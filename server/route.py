@@ -1,18 +1,15 @@
 from flask_restful import Resource, Api
-from database import *
-from model.pearson import *
-from model.euclidean import *
+from k_means import *
 from utils import *
 from json import *
 
 
 class Users(Resource):
     def get(self):
-        result = query_db("select * from users")
-        return {'res': result}  # Fetches first column that is Employee ID
+        return {'res': 'hej'}  # Fetches first column that is Employee ID
 
 
-
-
-
+blog_data, blog_names = get_data()
+result = k_means(blog_data)
+named_list = elements_for_names(result, blog_names)
 

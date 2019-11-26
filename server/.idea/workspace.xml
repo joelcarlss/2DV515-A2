@@ -3,12 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="bde32bbb-f064-49f1-aad6-5fd1ee8bd359" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/k_means.py" beforeDir="false" afterPath="$PROJECT_DIR$/k_means.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pearson.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/route.py" beforeDir="false" afterPath="$PROJECT_DIR$/route.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/route.py" beforeDir="false" afterPath="$PROJECT_DIR$/route.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,5 +77,15 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/index.py</url>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
