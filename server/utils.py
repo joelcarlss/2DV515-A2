@@ -9,4 +9,8 @@ def get_data(source = 'blogdata.txt'):
 
 
 def elements_for_names(index_list, names):
-    print(names)
+    name_list = {}
+    for key in index_list:
+        name_list[key] = names[index_list[key]]
+
+    return name_list
