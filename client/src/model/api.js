@@ -7,7 +7,6 @@ export const getUser = async () => {
     }
     return data.res
   } catch (e) {
-    console.log(e)
     return undefined
   }
 }
@@ -44,11 +43,10 @@ export const getReqUser = async (id, amount, algoritm) => {
 export const getCluster = async () => {
   try {
     let data
-    const result = await fetch('http://127.0.0.1:5002/clusters')
+    const result = await window.fetch('http://127.0.0.1:5002/clusters')
     if (result.status === 200) {
       data = await result.json()
     }
-    console.log(data.res)
     return data.res
   } catch (e) {
     console.log(e)

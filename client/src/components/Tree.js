@@ -14,15 +14,18 @@ const useStyles = makeStyles({
   }
 })
 
-export default function Tree() {
+export default function Tree () {
   const classes = useStyles()
   const [cluster, setCluster] = useState()
 
   useEffect(() => {
-    setCluster(getCluster())
+    getCluster().then(res => {
+      setCluster(res)
+    })
   }, [])
 
   const renderTreeChilds = () => {
+    console.log(cluster)
     if (cluster !== undefined) {
       return (<div>
 
