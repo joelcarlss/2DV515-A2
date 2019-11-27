@@ -1,7 +1,7 @@
 import numpy as np
 
-def k_means(blog_data):
 
+def k_means(blog_data):
     blog_amount, word_amount = blog_data.shape
 
     # Amount of clusters
@@ -16,7 +16,7 @@ def k_means(blog_data):
     # Create Centroids
     # K amount of arrays with random numbers between lowest and highest frequency of each word
     # max_frequency + 1 because random value < max.
-    centroids = np.random.randint(min_frequency, max_frequency+1, (k, word_amount))
+    centroids = np.random.randint(min_frequency, max_frequency+1, (k, word_amount)).astype(float)
 
     matching_centroids = np.array([])
     best_matching_indexes = {}
@@ -29,7 +29,7 @@ def k_means(blog_data):
         similarities = np.array(np.corrcoef(blog_data, centroids)[:blog_amount, -k::])
 
         if np.array_equal(similarities.argmax(axis=1), matching_centroids):
-            return  best_matching_indexes
+            return best_matching_indexes
         else:
             # The most similar centroid for every blog
             # or.. the index with the highest value on every element in clusters
@@ -40,4 +40,6 @@ def k_means(blog_data):
             best_matching_indexes[i] = np.where(matching_centroids == i)[0]  # Indexes that is most similar with centroid i
             best_matching_blogs = blog_data[best_matching_indexes[i]]  # Blogs that are most similar with centroid i
             centroids[i] = np.sum(best_matching_blogs, axis=0) / len(best_matching_indexes)  # Average blog. = new centroid
+
+
 
