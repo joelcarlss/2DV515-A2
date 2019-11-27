@@ -15,7 +15,7 @@ def k_means(blog_data):
 
     # Create Centroids
     # K amount of arrays with random numbers between lowest and highest frequency of each word
-    # max_frequency + 1 because random value < max.
+    # max_frequency + 1 because random value < max. Making it float for better precision
     centroids = np.random.randint(min_frequency, max_frequency+1, (k, word_amount)).astype(float)
 
     matching_centroids = np.array([])
