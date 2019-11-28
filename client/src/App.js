@@ -3,21 +3,21 @@ import Tree from './components/Tree'
 // import Table from './components/DenseTable'
 // import SimpleSelect from './components/SimpleSelect'
 import { Provider } from './useAppState'
+import List from '@material-ui/core/List'
 import './App.css'
 import CssBaseline from '@material-ui/core/CssBaseline'
-import Typography from '@material-ui/core/Typography'
 import Container from '@material-ui/core/Container'
 
-function App () {
+function App() {
   return (
     <div className='App'>
       <header className='App-header'>
         <div>
           <CssBaseline />
           <Container maxWidth='sm'>
-            <Typography component='div' style={{ height: '60vh' }} >
+            <List style={{ maxHeight: '100%', overflow: 'visible' }} >
               <Tree />
-            </Typography>
+            </List>
           </Container>
         </div>
       </header>
